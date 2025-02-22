@@ -1,0 +1,673 @@
+/* General reset */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Chat Section Styles */
+.chat-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* background-color: #f9f9f9;
+    padding: 20px; */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Ensures it stays on top of other content */
+    width: 300px;  /* Fixed width for the chatbox */
+}
+
+.chat-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#chatbox {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+#chat-messages div {
+    margin-bottom: 10px;
+}
+
+#chat-messages strong {
+    color: #333;
+}
+
+#user-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+#send-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Container */
+.register .container {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url('signup.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Glass card */
+.register .glass-card {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(135, 206, 250, 0.2);
+    /* Semi-transparent white */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    /* Shadow */
+    backdrop-filter: blur(5px);
+    /* Glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(135, 206, 250, 0.2);
+    text-align: center;
+}
+
+/* Title */
+.register .glass-card h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Input fields */
+.register .glass-card input[type="text"],
+.register .glass-card input[type="email"],
+.register .glass-card input[type="password"] {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: white;
+    /* Transparent background */
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+.register .glass-card input::placeholder {
+    color: grey;
+    font-size: 13px;
+}
+
+/* Button */
+.register .glass-card button {
+    width: 60%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register .glass-card button:hover {
+    background-color: rgba(0, 123, 255, 1);
+}
+
+/* Link */
+.register .glass-card p {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.register .glass-card p a {
+    color: black;
+    text-decoration: none;
+}
+
+.register .glass-card p a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* General reset */
+
+
+/* Main container */
+body.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('login.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    /* Ensures the image covers the viewport */
+}
+
+.login .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+}
+
+/* Combined Glass Card */
+.login .glass-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Ensures cards appear as one unit */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Left Card: Transparent Login Form */
+.login .left-card {
+    flex: 1;
+    padding: 30px;
+    background: rgba(135, 206, 250, 0.2);
+    /* Semi-transparent white */
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Right Card: Light Blue Content */
+.login .right-card {
+    flex: 1;
+    padding: 30px;
+    background: #7F9EAE;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title */
+.login .glass-card .left-card h1 {
+    padding-right: 330px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login .glass-card .left-card p {
+    padding-right: 140px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+/* Input Fields */
+.login .glass-card input[type="text"],
+.login .glass-card input[type="password"] {
+    width: 100%;
+    padding: 12px 0px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+.login .glass-card input::placeholder {
+    color: grey;
+}
+
+/* Button */
+.login .glass-card button {
+    width: 80%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login .glass-card button:hover {
+    background-color: rgba(0, 123, 255, 1);
+    color: black;
+}
+
+/* Link */
+.login .glass-card .left-card p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: black;
+}
+
+.login .glass-card p a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+.login .glass-card p a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.home-page {
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+nav .left,
+nav .right {
+    display: flex;
+    gap: 20px;
+    /* Space between links */
+}
+
+nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007BFF;
+    /* Change color on hover */
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: #dde5ed;
+    border-bottom: 5px solid #ccc;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.hero p {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.search-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+.right a {
+    color: white;
+}
+
+.right button {
+    padding: 10px 20px;
+    border: none;
+    background-color: black;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.right a:hover {
+    color: white;
+}
+
+.right button:hover {
+    background-color: blue;
+
+}
+
+.search-box button {
+    padding: 10px 30px;
+    border: none;
+    background-color: black;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-box button:hover {
+    background-color: blue;
+}
+.search-box button a{
+    color: white;
+    text-decoration: none;
+}
+
+.hero-image {
+    max-width: 35%;
+    border-radius: 10px;
+}
+
+.info-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #dde5ed;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #ccc;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.btn-appointment {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-appointment:hover {
+    background-color: blue;
+}
+
+body.community-page {
+    background: linear-gradient(to right, #f0f8ff, #add8e6);
+    padding-top: 0px;
+    /* Space for the navbar */
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 90px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    text-align: center;
+}
+
+.chat-container h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.chat-container p {
+    margin-bottom: 30px;
+}
+
+/* Input for Name Entry */
+#nameEntry input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#nameEntry button {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#nameEntry button:hover {
+    background-color: #0056b3;
+}
+
+/* Chat Portal */
+#messages {
+    list-style-type: none;
+    padding: 0;
+    height: 300px;
+    overflow-y: auto;
+    margin: 20px 0;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#messages li {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #dfefff;
+    border-radius: 5px;
+    text-align: left;
+}
+
+#chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#chat button {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat button:hover {
+    background-color: blue;
+}
+
+.community-page nav .right a {
+    font-weight: bold;
+    color: white;
+}
+
+.about-hero {
+    margin-top: 0px;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, rgba(240, 248, 255, 0.8), rgba(173, 216, 230, 0.8));
+    color: #2c3e50;
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #f0f8ff;
+}
+
+.vision,
+.mission {
+    flex: 1 1 45%;
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vision h2,
+.mission h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.vision p,
+.mission p {
+    font-size: 16px;
+    color: #34495e;
+}
+
+/* Impact Section */
+.impact {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.8), rgba(240, 248, 255, 0.8));
+}
+
+.impact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.impact p {
+    font-size: 18px;
+    color: #34495e;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+
+
