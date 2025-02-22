@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="/about">About Us</a>
+            <a href="/community">Community</a>
+            <a href="https://sakhi-asd-prediction-system.streamlit.app/">Prediction</a>
+        </div>
+        <div class="right">
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+    <h1>Welcome to the Home Page</h1>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Chatbot styles */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #f1f1f1;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        #chatbot-header {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #chatbot-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            display: none;
+        }
+        #chatbot-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+        #chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        #chatbot-input button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="/about">About Us</a>
+            <a href="/community">Community</a>
+            <a href="https://sakhi-asd-prediction-system.streamlit.app/">Prediction</a>
+        </div>
+        <div class="right">
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+    <h1>Welcome to the Home Page</h1>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">Chat with us</div>
+        <div id="chatbot-body">
+            <div id="chatbot-messages"></div>
+            <div id="chatbot-input">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="chat-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot functionality
+        const apiKey = "AIzaSyCJ-1heEozpYDX1h3tCexg6S-3r0Mx6KRc"; // Gemini AI API Key
+
+        // Toggle chatbot visibility
+        document.getElementById('chatbot-header').addEventListener('click', () => {
+            const body = document.getElementById('chatbot-body');
+            body.style.display = body.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Send message to chatbot
+       // Send message to chatbot
+document.getElementById('chat-send').addEventListener('click', async () => {
+    const input = document.getElementById('chat-input');
+    const userMessage = input.value.trim();
+    if (userMessage) {
+        addMessage('User', userMessage);
+        input.value = '';
+
+        try {
+            const botResponse = await getChatbotResponse(userMessage);
+            addMessage('Bot', botResponse);
+        } catch (error) {
+            addMessage('Bot', 'Sorry, an error occurred.');
+        }
+    }
+});
+
+// Add message to chat
+function addMessage(sender, message) {
+    const messages = document.getElementById('chatbot-messages');
+    const messageElement = document.createElement('div');
+    messageElement.textContent = `${sender}: ${message}`;
+    messages.appendChild(messageElement);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+// Get chatbot response from Flask API
+async function getChatbotResponse(userMessage) {
+    const response = await fetch('/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: userMessage })
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch response');
+    }
+
+    const data = await response.json();
+    return data.response || 'No response from chatbot.';
+}
+
+    </script>
+</body>
+</html>
