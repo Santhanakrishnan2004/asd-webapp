@@ -6,7 +6,7 @@ const authRoutes = require('./routes/auth');
 const http = require('http');
 const socketIo = require('socket.io');
 const app = express();
-const PORT = 3000;
+const PORT = 3000||process.env.port;
 
 // Middleware
 app.use(express.static('public'));
