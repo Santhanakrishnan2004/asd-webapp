@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Chat</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        #messages { list-style-type: none; padding: 0; }
-        #messages li { padding: 8px; margin-bottom: 10px; background-color: #f4f4f4; border-radius: 5px; }
-        #chat { display: flex; margin-top: 20px; }
-        #chat input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        #chat button { padding: 10px; border: none; background-color: #007BFF; color: white; border-radius: 5px; margin-left: 5px; cursor: pointer; }
-        #chat button:hover { background-color: #0056b3; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Community Chat</h1>
-    <div id="nameEntry">
-        <input id="username" placeholder="Enter your name" />
-        <button onclick="joinChat()">Join</button>
-    </div>
-    <div id="chatPortal" style="display: none;">
-        <ul id="messages"></ul>
-        <div id="chat">
-            <input id="messageInput" autocomplete="off" placeholder="Type a message..." />
-            <button onclick="sendMessage()">Send</button>
+
+<body class="community-page">
+    <!-- Navbar -->
+    <nav>
+        <div class="left">
+            <a href="/home">Home</a>
+            <a href="/about">About Us</a>
+            <a href="https://sakhi-asd-prediction-system.streamlit.app/">Prediction</a>
+        </div>
+        <div class="right">
+            <button><a href="/home">Sign out</a></button>
+        </div>
+    </nav>
+
+    <!-- Chat Section -->
+    <div class="chat-container">
+        <h1>Community Chat</h1>
+        <p>Welcome to our Community Chat – a dedicated space where individuals can come together, share experiences, and
+            support
+            each other. Whether you're here to ask questions, seek advice, or simply share your thoughts, this platform
+            is designed
+            to foster meaningful connections. Engage in open discussions, learn from others, and contribute to our
+            growing
+            community. Your voice matters, and this is your safe space to be heard and understood.
+        </p>
+        <div id="nameEntry">
+            <input id="username" placeholder="Enter your name" />
+            <button onclick="joinChat()">Join</button>
+        </div>
+        <div id="chatPortal" style="display: none;">
+            <ul id="messages"></ul>
+            <div id="chat">
+                <input id="messageInput" autocomplete="off" placeholder="Type a message..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
         </div>
     </div>
+
+    <!-- Include Socket.io -->
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
@@ -64,4 +83,5 @@
         });
     </script>
 </body>
+
 </html>

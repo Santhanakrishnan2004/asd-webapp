@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="./login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-        <!-- Email -->
-        <input type="username" name="username" placeholder="username" required><br>
-        <!-- Password -->
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account? <a href="/signup">Sign Up here</a></p>
+
+<body class="login">
+    <div class="container">
+        <!-- Combined Glass Card -->
+        <div class="glass-card">
+            <!-- Left Side: Transparent Login Form -->
+            <div class="left-card">
+                <h1>Login</h1>
+                <p>Welcome back! Please enter your details</p>
+                <form action="/login" method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don’t have an account? <a href="/signup">Register here</a></p>
+            </div>
+            <!-- Right Side: Light Blue Content -->
+            <div class="right-card">
+                <h1>Welcome Back!</h1>
+                <p>Sign in to continue and access amazing features designed to improve your experience.</p>
+                <p>If you don’t have an account yet, register today!</p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
