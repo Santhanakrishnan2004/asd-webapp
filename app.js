@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config(); 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -21,7 +22,7 @@ app.use(session({
 app.set('view engine', 'ejs');
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://santhanakrishnan9704:K2Ww9VAwCvZIYU6c@users-login.z9xxw.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error(err));
 
