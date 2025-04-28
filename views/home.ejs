@@ -80,11 +80,18 @@
     </footer>
     <script>
   document.getElementById('send-btn').addEventListener('click', async function () {
-    const userInput = document.getElementById('user-input').value;
+document.getElementById('send-btn').addEventListener('click', async function () {
+    const userInput = document.getElementById('user-input').value.trim();
     const chatMessages = document.getElementById('chat-messages');
 
     // Log the user input to the console
     console.log('User Input:', userInput);
+
+    // Check if the input is empty
+    if (!userInput) {
+        alert("Please enter a message before submitting.");
+        return; // Don't send the request if the input is empty
+    }
 
     // Display user message
     chatMessages.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
@@ -95,7 +102,7 @@
         const response = await fetch('https://asd-chatbot-1.onrender.com/chat-asd', {  // Ensure this matches your Flask URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ input: userInput })  // Change the key to 'input'
+            body: JSON.stringify({ input: userInput })  // Make sure 'input' is being sent
         });
 
         if (!response.ok) {
@@ -113,6 +120,7 @@
         console.error('Error during request:', error);
     }
 });
+
 
     </script>
     
