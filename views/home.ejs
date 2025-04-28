@@ -381,7 +381,7 @@ versel darkmode
             document.getElementById('user-input').value = '';
     
             try {
-                const response = await fetch('http://localhost:5000/chat-asd', {
+                const response = await fetch('https://asd-chatbot-1.onrender.com/chat-asd', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: userInput })
