@@ -79,40 +79,41 @@
 <p>&copy; 2025 Team13. All rights reserved.</p>
     </footer>
     <script>
-        document.getElementById('send-btn').addEventListener('click', async function () {
-            const userInput = document.getElementById('user-input').value;
-            const chatMessages = document.getElementById('chat-messages');
-    
-            // Log the user input to the console
-            console.log('User Input:', userInput);
-    
-            // Display user message
-            chatMessages.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
-            document.getElementById('user-input').value = ''; // Clear input field
-    
-            // Send message to Flask API
-            try {
-                const response = await fetch('https://asd-chatbot-1.onrender.com/chat-asd', {  // Ensure this matches your Flask URL
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: userInput })
-                });
-    
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-    
-                const data = await response.json();
-    
-                // Log the response from the backend
-                console.log('Bot Response:', data);
-    
-                // Display the response from the bot
-                chatMessages.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
-            } catch (error) {
-                console.error('Error during request:', error);
-            }
+  document.getElementById('send-btn').addEventListener('click', async function () {
+    const userInput = document.getElementById('user-input').value;
+    const chatMessages = document.getElementById('chat-messages');
+
+    // Log the user input to the console
+    console.log('User Input:', userInput);
+
+    // Display user message
+    chatMessages.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+    document.getElementById('user-input').value = ''; // Clear input field
+
+    // Send message to Flask API
+    try {
+        const response = await fetch('https://asd-chatbot-1.onrender.com/chat-asd', {  // Ensure this matches your Flask URL
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ input: userInput })  // Change the key to 'input'
         });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Log the response from the backend
+        console.log('Bot Response:', data);
+
+        // Display the response from the bot
+        chatMessages.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+    } catch (error) {
+        console.error('Error during request:', error);
+    }
+});
+
     </script>
     
 </body>
